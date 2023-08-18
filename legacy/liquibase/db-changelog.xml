@@ -8,5 +8,11 @@
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
         http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd">
 
+    <changeSet id="Extend title to 51 characters" author="DBA present">
+        <modifyDataType tableName="titles" columnName="title" newDataType="varchar(51)"/>
+        <rollback>
+            <modifyDataType tableName="titles" columnName="title" newDataType="varchar(50)"/>
+        </rollback>
+    </changeSet>
 
 </databaseChangeLog>
