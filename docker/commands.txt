@@ -1,0 +1,21 @@
+docker run -p 3306:3306 -p 33060:33060 --name=mysql8 -d mysql/mysql-server:8.0
+
+docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=mypassword mysql/mysql-server
+
+docker run -d -p 3306:3306 -v /var/lib/mysql -e MYSQL_ROOT_PASSWORD=mypassword
+
+mkdir -p /data/mysql
+
+docker run -d -p 3306:3306 -v /data/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=mypassword mysql/mysql-server
+
+
+docker run -d -p 3306:3306 -p 33060:33060 -v /home/parom/IdeaProjects/LiquibaseLearning/mySqlDataDB:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root --name=mysql8 mysql/mysql-server:8.0
+
+select * from databasechangelog order by dateexecuted asc
+
+
+// work variant!
+docker run --name mysql8 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=admin -e MYSQL_DATABASE=testdb -e MYSQL_USER=admin -e MYSQL_PASSWORD=root -d mysql:8.0
+
+sudo echo "export PATH=/home/parom/Liquibase4.23.1:$PATH" >> ~/.bashrc
+source ~/.bashrc
