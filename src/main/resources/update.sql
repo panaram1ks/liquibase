@@ -5,7 +5,7 @@ UPDATE DATING.DATABASECHANGELOGLOCK SET `LOCKED` = 1, LOCKEDBY = 'parominskiy (1
 --  Update Database Script
 --  *********************************************************************
 --  Change Log: db-changelog.xml
---  Ran at: 18.08.23 14:30
+--  Ran at: 18.08.23 15:00
 --  Against: webuser@172.17.0.1@jdbc:mysql://localhost:3306/DATING
 --  Liquibase version: 4.23.1
 --  *********************************************************************
