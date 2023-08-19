@@ -9,7 +9,7 @@ mkdir -p /data/mysql
 docker run -d -p 3306:3306 -v /data/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=mypassword mysql/mysql-server
 
 
-docker run -d -p 3306:3306 -p 33060:33060 -v /home/parom/IdeaProjects/LiquibaseLearning/mySqlDataDB:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root --name=mysql8 mysql/mysql-server:8.0
+docker run -d -p 3306:3306 -p 33060:33060 -v /home/parom/IdeaProjects/liquibase/mySqlDataDB:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root --name=mysql8 mysql/mysql-server:8.0
 
 select * from databasechangelog order by dateexecuted asc
 
