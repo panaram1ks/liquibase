@@ -99,6 +99,7 @@
         </rollback>
     </changeSet>
 
+    <!--    exercise 2-->
     <changeSet id="Change NULL values on PRO_Gender" author="DBA presents">
         <update tableName="PROFILES">
             <column name="PRO_GENDER" value="U"/>
@@ -120,6 +121,20 @@
 
     <changeSet id="Add not null constraint on PRO_GENDER" author="DBA presents">
         <addNotNullConstraint tableName="PROFILES" columnName="PRO_GENDER" columnDataType="char(1)"/>
+    </changeSet>
+
+    <!--    exercise 3-->
+    <changeSet id="DROP PRO_GENDER" author="DBA present">
+        <dropColumn tableName="PROFILES" columnName="PRO_GENDER"/>
+        <rollback>
+            <addColumn tableName="PROFILES">
+                <column name="PRO_GENDER" type="char(1)"></column>
+            </addColumn>
+            <update tableName="PROFILES">
+                <column name="PRO_GENDER" value="U"/>
+            </update>
+            <addNotNullConstraint tableName="PROFILES" columnName="PRO_GENDER" columnDataType="char(1)"/>
+        </rollback>
     </changeSet>
 
 </databaseChangeLog>
